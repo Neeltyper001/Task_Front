@@ -1,1 +1,1 @@
-export const URL = "https://task-back-ftbp.onrender.com"
+export const URL = "https://task-back-ftbp.onrender.com/api/v1"
