@@ -65,9 +65,26 @@ const deleteTask = async (id) => {
 
 }
 
+const updateTask = async (id, task) => {
+    try {
+        const updatedTask = await axios.put(`${URL}/tasks/update/${id}`, task)
+
+        if(updatedTask.status === 200){
+            return updatedTask.data
+        }
+        else{
+            throw new Error("Error while updating the task")
+        }
+    } catch (error) {
+        console.log(error.message)
+    }
+    
+}
+
 export {
     getAllTasks,
     getSingleTask,
     createTask,
-    deleteTask
+    deleteTask,
+    updateTask
 }

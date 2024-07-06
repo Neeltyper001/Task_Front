@@ -25,6 +25,8 @@ const ViewSingle = ()=>{
 
     const handleDelete = async () => {
         try {
+            const response = confirm('Are you sure you want to delete this task?');
+            if(!response) return;
             await deleteTask(id);
             navigate('/');
         } catch (error) {
